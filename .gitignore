@@ -1,0 +1,6 @@
+*.spec
+__pycache__/
+*.db
+*.todo
+build/
+dist/
