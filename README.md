@@ -2,6 +2,7 @@ MinesweePy
 ==========
 A Minesweeper-clone written in Python3 using Tkinter
 
+![MinesweePy Screenshot](/screenshots/minesweepy_ingame_medium.png?raw=true "MinesweePy ingame screenshot")
 
 Current Features:
 -----------------
