@@ -419,8 +419,8 @@ if __name__ == '__main__':
                 rank = highscore.check_time_rank(difficulty, time)
                 if rank <= 10:
                     title = 'Highscore!'
-                    msg = 'You got rank %d in %d seconds! \
-                        \nPlease enter your name:' % (rank, time)
+                    msg = '''You got rank %d in %d seconds!
+                        \nPlease enter your name:''' % (rank, time)
                     add_entry = True
                     last_highscore = '%s:%d' % (difficulty, rank)
         else:
@@ -501,9 +501,9 @@ if __name__ == '__main__':
         if game.get_difficulty() != difficulty:
             if not game.is_running() or messagebox.askyesno(
                 title='Change difficulty',
-                message='Do you really want to change the difficulty now?\
-                \n\nThis will reset your game and \
-                \nyour current progress will be lost...'
+                message='''Do you really want to change the difficulty now?
+                \n\nThis will reset your game and
+                \nyour current progress will be lost...'''
             ):
                 if difficulty == 'custom':
                     show_custom_difficulty_window()
@@ -563,25 +563,25 @@ if __name__ == '__main__':
     def reset_game(*args):
         if not game.is_running() or messagebox.askyesno(
             title='Restart current game',
-            message='Do you really want to restart?\
-            \n\nYour current progress will be lost...'
+            message='''Do you really want to restart?
+            \n\nYour current progress will be lost...'''
         ):
             game.reset()
 
     def exit_game(*args):
         if not game.is_running() or messagebox.askyesno(
             title='Exit MinesweePy',
-            message='Do you really want to quit?\
-            \n\nYour current progress will be lost...'
+            message='''Do you really want to quit?
+            \n\nYour current progress will be lost...'''
         ):
             root.destroy()
 
     def show_about_window(*args):
         messagebox.showinfo(
             title='About MinesweePy',
-            message='Version: %s \
-                \n \
-                \nCopyright 2016 by sol-develop.de' % VERSION
+            message='''Version: %s
+                \n
+                \nCopyright 2016 by sol-develop.de''' % VERSION
         )
 
     def show_highscore(difficulty='current'):
