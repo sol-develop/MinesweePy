@@ -455,10 +455,20 @@ if __name__ == '__main__':
     timer = timer.Timer(tk_int_timer, lbl_timer)
 
     # attach widgets to the game
-    game = minesweepy.MinesweePy(field_frame)
-    game.set_minecounter(tk_int_mines)
-    game.set_timer(timer)
-    game.attach_gameover_handler(gameover_handler)
+    try:
+        game = minesweepy.MinesweePy(field_frame)
+        game.set_minecounter(tk_int_mines)
+        game.set_timer(timer)
+        game.attach_gameover_handler(gameover_handler)
+
+    except Exception as e:
+        messagebox.showerror(
+            title='MinesweePy Error',
+            message='''Error!
+                \n%s''' % e
+        )
+        exit
+
     btn_state.config(command=reset_game)
     tk_str_difficulty.set(game.get_difficulty())
 

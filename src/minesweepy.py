@@ -24,21 +24,24 @@ class MinesweePy():
 
     def load_theme(self, theme):
 
-        # self.img_blank = tk.PhotoImage(
-        #     file=os.path.join('images', 'theme', 'blank.gif')
-        # )
-        self.img_covered = tk.PhotoImage(
-            file=os.path.join('images', theme, 'field_covered.gif')
-        )
-        self.img_discovered = tk.PhotoImage(
-            file=os.path.join('images', theme, 'field_discovered.gif')
-        )
-        self.img_covered_flag = tk.PhotoImage(
-            file=os.path.join('images', theme, 'flag.gif')
-        )
-        self.img_mine = tk.PhotoImage(
-            file=os.path.join('images', theme, 'mine.gif')
-        )
+        try:
+            # self.img_blank = tk.PhotoImage(
+            #     file=os.path.join('images', 'theme', 'blank.gif')
+            # )
+            self.img_covered = tk.PhotoImage(
+                file=os.path.join('images', theme, 'field_covered.gif')
+            )
+            self.img_discovered = tk.PhotoImage(
+                file=os.path.join('images', theme, 'field_discovered.gif')
+            )
+            self.img_covered_flag = tk.PhotoImage(
+                file=os.path.join('images', theme, 'flag.gif')
+            )
+            self.img_mine = tk.PhotoImage(
+                file=os.path.join('images', theme, 'mine.gif')
+            )
+        except:
+            raise Exception('Could not load theme graphics')
 
         numbercolors = self.ini.items('numbercolors')
         self.numbercolors = {}
